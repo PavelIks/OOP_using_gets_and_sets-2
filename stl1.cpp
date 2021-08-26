@@ -5,51 +5,6 @@
 #include <functional>
 #include <string>
 
-//https://en.cppreference.com/w/cpp/algorithm
-
-// Функтор: Посчитать кол. фруктов, в названиях которых, меньше 5 символов
-/*using std::string;
-using std::cout;
-
-class IsEv
-{
-public:
-	bool operator () (const string& val) const
-	{
-		return val.length() > 5 == 0;
-	}
-};
-
-int main()
-{
-	const int SIZE = 5;
-	string arr[SIZE]{ "Банан","Банан","Банан","Банан","Банан" };
-
-	std::cout << std::count_if(std::begin(arr), std::end(arr), IsEv()) << "\n";
-}*/
-
-// I love и X5 какие-то фрукты (доделать!!!!!!!!!!!!!!!)
-/*using std::string;
-using std::cout;
-
-int main()
-{
-	setlocale(LC_ALL, "Russian");
-
-	const int SIZE = 5;
-	string arr[SIZE]{ "Банан","Ведро кампота","Негрофильмы","Груши","Оцелотов" };
-	string zz = "Йа лублю ";
-
-
-	for (int i = 0; i <= SIZE; i++)
-	{
-		zz += arr[i];
-	}
-	cout << zz << "\n";
-}*/
-
-// EXAMEN...
-
 class ZZ
 {
 public:
@@ -65,19 +20,65 @@ public:
 	void set_month(int _month)
 	{
 		month = _month;
-
 	}
-
-	int get_month()
+	/*int get_month()
 	{
 		return month;
+	}*/
+	std::string get_month()
+	{
+		if (month == 1)
+		{
+			return "Овен\n";
+		}
+		if (month == 2)
+		{
+			return "Телец\n";
+		}
+		if (month == 3)
+		{
+			return "Близнецы\n";
+		}
+		if (month == 4)
+		{
+			return "Рак\n";
+		}
+		if (month == 5)
+		{
+			return "Лев\n";
+		}
+		if (month == 6)
+		{
+			return "Дева\n";
+		}
+		if (month == 7)
+		{
+			return "Весы\n";
+		}
+		if (month == 8)
+		{
+			return "Скорпионы\n";
+		}
+		if (month == 9)
+		{
+			return "Стрелец\n";
+		}
+		if (month == 10)
+		{
+			return "Козерог\n";
+		}
+		if (month == 11)
+		{
+			return "Водолей\n";
+		}
+		if (month == 12)
+		{
+			return "Рыбы\n";
+		}
 	}
 
 	void show_info()
 	{
-		/*std::cout << "Введи номер месяца: ";
-		std::cin >> month;*/
-
 		std::string zz;
 
 		if (month > 12)
@@ -88,165 +89,80 @@ public:
 		{
 			if (month == 1)
 			{
-				std::cout << std::string("Козерог\n");
+				std::cout << std::string("Овен\n");
 				std::cout << zz;
 			}
 			if (month == 2)
 			{
-				std::string zz("Водолей\n");
+				std::string zz("Телец\n");
 				std::cout << zz;
 			}
 			if (month == 3)
 			{
-				std::cout << "Рыбы\n";
+				std::string zz("Близнецы\n");
+				std::cout << zz;
 			}
 			if (month == 4)
 			{
-				std::cout << "Овен\n";
+				std::string zz("Рак\n");
+				std::cout << zz;
 			}
 			if (month == 5)
 			{
-				std::cout << "Телец\n";
+				std::string zz("Лев\n");
+				std::cout << zz;
 			}
 			if (month == 6)
 			{
-				std::cout << "Близнецы\n";
+				std::string zz("Дева\n");
+				std::cout << zz;
 			}
 			if (month == 7)
 			{
-				std::cout << std::string("Лев\n");
+				std::string zz("Весы\n");
 				std::cout << zz;
 			}
 			if (month == 8)
 			{
-				std::cout << "Лев\n";
+				std::string zz("Скорпионы\n");
+				std::cout << zz;
 			}
 			if (month == 9)
 			{
-				std::cout << "Дева\n";
+				std::string zz("Стрелец\n");
+				std::cout << zz;
 			}
 			if (month == 10)
 			{
-				std::cout << "Весы\n";
+				std::string zz("Козерог\n");
+				std::cout << zz;
 			}
 			if (month == 11)
 			{
-				std::cout << "Скорпион\n";
+				std::string zz("Водолей\n");
+				std::cout << zz;
 			}
 			if (month == 12)
 			{
-				std::cout << "Стрелец\n";
+				std::string zz("Рыбы\n");
+				std::cout << zz;
 			}
 		}
 	}
-
 
 private:
 	int month;
 };
 
-
-
 int main()
 {
 	setlocale(LC_ALL, "Russian");
 
-	ZZ zz1 = ZZ(2);
+	ZZ zz1 = ZZ(1);
 	zz1.show_info();
 
-	zz1.set_month(3);
+	zz1.set_month(2);
 	zz1.show_info();
 
-	/*int a = 0;
-	std::cout << "Введи номер месяца: ";
-	std::cin >> a;
-
-	int day = 0;
-	std::cout << "Введи номер дня: ";
-	std::cin >> day;
-
-	std::string zz;
-
-	if (a > 12)
-	{
-		std::cout << "404";
-	}
-	else
-	{
-		if (a == 1)
-		{
-			
-			if (day <= 19 && day >= 1)
-			{
-				std::cout << std::string("Козерог");
-				std::cout << zz;
-			}
-			else
-			{
-				std::cout << std::string("Стрелец");
-				std::cout << zz;
-			}
-		}
-		if (a == 2)
-		{
-			if (day >= 19 && day <= 28)
-			{
-				std::string zz("Рыба");
-				std::cout << zz;
-			}
-			else
-			{
-				std::string zz("Водолей");
-				std::cout << zz;
-			}
-		}
-		if (a == 3)
-		{
-			std::cout << "Рыбы";
-		}
-		if (a == 4)
-		{
-			std::cout << "Овен";
-		}
-		if (a == 5)
-		{
-			std::cout << "Телец";
-		}
-		if (a == 6)
-		{
-			std::cout << "Близнецы";
-		}
-		if (a == 7)
-		{
-			if (day <= 22 && day >= 30)
-			{
-				std::cout << std::string("Лев");
-				std::cout << zz;
-			}
-			else
-			{
-				std::cout << std::string("Рак");
-				std::cout << zz;
-			}
-		}
-		if (a == 8)
-		{
-			std::cout << "Лев";
-		}
-		if (a == 9)
-		{
-			std::cout << "Дева";
-		}
-		if (a == 10)
-		{
-			std::cout << "Весы";
-		}
-		if (a == 11)
-		{
-			std::cout << "Скорпион";
-		}
-		if (a == 12)
-		{
-			std::cout << "Стрелец";
-		}*/
-	}
+	std::cout << zz1.get_month() << "\n";
+}

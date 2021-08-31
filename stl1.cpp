@@ -1,9 +1,5 @@
-﻿#include <iostream>
-#include <vector>
-#include <iterator>
-#include <algorithm>
-#include <functional>
-#include <string>
+﻿#include <string>
+#include <iostream>
 
 class ZZ
 {
